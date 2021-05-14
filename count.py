@@ -1,15 +1,13 @@
 import tkinter as tk
 
 def my_click():
-    my_click.counter = getattr(my_click, 'counter', 0) + 1
-    g.configure(state='normal')
-    g.delete(0,'end')
-    g.insert(0, str(my_click.counter))
-    g.configure(state='readonly')
+    ''' This function is called when clicking on the button'''
+    v.set(v.get() + 1)
 
 window = tk.Tk()
 
-g = tk.Entry (state = "readonly")
+v = tk.IntVar()
+g = tk.Entry (state = "readonly", textvariable=v)
 g.pack()
 g.insert(0,  "Hello World!" )
 
